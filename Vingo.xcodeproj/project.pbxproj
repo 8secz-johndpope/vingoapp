@@ -27,6 +27,7 @@
 		FB9931DC24C2141A0020B441 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9931DB24C2141A0020B441 /* ImageLoader.swift */; };
 		FB9F0C0124C390D800AA1191 /* MuseumCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9F0C0024C390D800AA1191 /* MuseumCard.swift */; };
 		FB9F0C0424C3919900AA1191 /* MuseumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9F0C0324C3919900AA1191 /* MuseumView.swift */; };
+		FB9F0C0824C3A5A100AA1191 /* UIImage+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9F0C0724C3A5A000AA1191 /* UIImage+Helper.swift */; };
 		FBB5E5052457893300EF2C54 /* PlaygroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB5E5042457893300EF2C54 /* PlaygroundView.swift */; };
 		FBF964E12453566E00E8EE2A /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF964DC2453566E00E8EE2A /* CameraController.swift */; };
 		FBF964E32453566E00E8EE2A /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF964DE2453566E00E8EE2A /* CameraViewController.swift */; };
@@ -60,6 +61,7 @@
 		FB9931DB24C2141A0020B441 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		FB9F0C0024C390D800AA1191 /* MuseumCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuseumCard.swift; sourceTree = "<group>"; };
 		FB9F0C0324C3919900AA1191 /* MuseumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuseumView.swift; sourceTree = "<group>"; };
+		FB9F0C0724C3A5A000AA1191 /* UIImage+Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Helper.swift"; sourceTree = "<group>"; };
 		FBB5E5042457893300EF2C54 /* PlaygroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaygroundView.swift; sourceTree = "<group>"; };
 		FBF964DC2453566E00E8EE2A /* CameraController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
 		FBF964DE2453566E00E8EE2A /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 				FB9931D424C213900020B441 /* AsyncImage */,
 				FB9931C724C1EC5F0020B441 /* ShakeEffect.swift */,
 				FBF964E02453566E00E8EE2A /* CVPixelBuffer+Helper.swift */,
+				FB9F0C0724C3A5A000AA1191 /* UIImage+Helper.swift */,
 			);
 			path = components;
 			sourceTree = "<group>";
@@ -322,6 +325,7 @@
 				A07753DD2343F15B00186969 /* TorchModule.mm in Sources */,
 				A07753C62343DDEE00186969 /* AppDelegate.swift in Sources */,
 				FB9931D824C213E20020B441 /* EnvironmentValues+ImageCache.swift in Sources */,
+				FB9F0C0824C3A5A100AA1191 /* UIImage+Helper.swift in Sources */,
 				FB9931D024C208460020B441 /* Model.swift in Sources */,
 				FB9F0C0124C390D800AA1191 /* MuseumCard.swift in Sources */,
 				FBF964E12453566E00E8EE2A /* CameraController.swift in Sources */,
