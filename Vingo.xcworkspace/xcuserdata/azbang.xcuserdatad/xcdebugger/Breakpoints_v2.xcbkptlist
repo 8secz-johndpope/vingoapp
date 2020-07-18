@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "8DDC23DE-DA9A-4684-8091-94F860A4ACD1"
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9FB3169D-ED02-49DC-AEF9-E5E9399493D3"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HelloWorld/UIImage+Helper.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
+            landmarkName = "normalized()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CB5739D4-309E-498A-A3EA-E16C4E5A3CBB"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HelloWorld/PlaygroundView/PlaygroundView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "11"
+            endingLineNumber = "11"
+            landmarkName = "UpperControl"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "CB5739D4-309E-498A-A3EA-E16C4E5A3CBB - 6d69c80f0abae36"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; SwiftUI.TupleView&lt;(HelloWorld.BadgeButton, SwiftUI.Spacer, HelloWorld.BadgeButton)&gt; in HelloWorld.PlaygroundView.UpperControl.getter : some"
+                  moduleName = "HelloWorld"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/azbang/Desktop/HelloWorld/HelloWorld/PlaygroundView/PlaygroundView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "94">
+               </Location>
+               <Location
+                  uuid = "CB5739D4-309E-498A-A3EA-E16C4E5A3CBB - c2de058577dbe344"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in closure #1 () -&gt; SwiftUI.TupleView&lt;(HelloWorld.BadgeButton, SwiftUI.Spacer, HelloWorld.BadgeButton)&gt; in HelloWorld.PlaygroundView.UpperControl.getter : some"
+                  moduleName = "HelloWorld"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/azbang/Desktop/HelloWorld/HelloWorld/PlaygroundView/PlaygroundView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "9"
+                  endingLineNumber = "9"
+                  offsetFromSymbolStart = "194">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
