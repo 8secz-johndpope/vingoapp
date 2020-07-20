@@ -15,7 +15,9 @@ struct MainView: View {
                 .kerning(-1.24)
                 .padding(.top, 10.0)
             
-            MuseumCard()
+            NavigationLink(destination: MuseumView()) {
+                MuseumCard()
+            }
         }
     }
 }

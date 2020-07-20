@@ -36,18 +36,26 @@ struct MuseumView: View {
                 .frame(width: 200, height: 5)
                 .foregroundColor(Color(#colorLiteral(red: 0.3101347089, green: 0.2808781564, blue: 1, alpha: 1)))
                 .padding(.top, 5.0)
-
-            Button(action: {}) {
-                Text("Start Explore")
-                    .font(.custom("Futura", size: 30))
-                    .fontWeight(.bold)
-                    .foregroundColor(Color(#colorLiteral(red: 0.3101347089, green: 0.2808781564, blue: 1, alpha: 1)))
-                    .kerning(-2.3)
-                    .padding()
-            }.background((RoundedRectangle(cornerRadius: 10.0).foregroundColor(.white)))
             
+            HStack(alignment: .center, spacing: 20) {
+                Button(action: {}) {
+                    Image(systemName: "location.fill")
+                        .foregroundColor(Color(#colorLiteral(red: 0.3101347089, green: 0.2808781564, blue: 1, alpha: 1)))
+                        .padding(.horizontal, 17)
+                        .padding(.vertical, 17)                    }.background((RoundedRectangle(cornerRadius: 50).foregroundColor(.white)))
+
+                NavigationLink(destination: PlaygroundView()) {
+                    Text("Start Explore")
+                        .font(.custom("Futura", size: 20))
+                        .fontWeight(.bold)
+                        .foregroundColor(Color(#colorLiteral(red: 0.3101347089, green: 0.2808781564, blue: 1, alpha: 1)))
+                        .kerning(-2.3)
+                        .padding(.horizontal, 20)
+                        .padding(.vertical, 10)
+                    }.background((RoundedRectangle(cornerRadius: 50).foregroundColor(.white)))
+            }.padding(.top, 20).shadow(radius: 20)
             Spacer()
-        }
+        }.padding(.top, 20)
     }
 }
 

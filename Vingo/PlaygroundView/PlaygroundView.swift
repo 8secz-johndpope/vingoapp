@@ -10,7 +10,7 @@ struct PlaygroundView: View {
         HStack {
             BadgeButton(action: { self.presentationMode.wrappedValue.dismiss() }, text: "Back")
             Spacer()
-            BadgeButton(action: {}, text: "Menu")
+            BadgeButton(action: {}, text: "Vincent Van Gogh")
         }
      }
 
@@ -20,19 +20,20 @@ struct PlaygroundView: View {
             VStack(alignment: .leading) {
                 UpperControl
                 Spacer()
-                QuestCard(question: "😘", location: "Мое сердечко")
-            }.padding()
+
+                VStack(alignment: .center) {
+                    MapLine(room: 1, picture: 1)
+                    HStack() {
+                        QuestCard(question: "🐶🐶🐶🐶🐶🐶🐶")
+                        QuestCard(question: "🐶🐶🐶🐶🐶🐶🐶")
+                        QuestCard(question: "🐶🐶🐶🐶🐶🐶🐶")
+                    }.padding()
+                }
+            }
         }
         .background(Color.black)
-        .edgesIgnoringSafeArea(.all)
         .navigationBarBackButtonHidden(true)
         .navigationBarTitle("")
-    }
-}
-
-struct PlaygroundView_Previews: PreviewProvider {
-    static var previews: some View {
-        PlaygroundView()
     }
 }
 
@@ -48,5 +49,11 @@ struct BadgeButton: View {
                 .padding(.horizontal, 10.0)
         }
         .background(RoundedRectangle(cornerRadius: 10.0).foregroundColor(.white))
+    }
+}
+
+struct PlaygroundView_Previews: PreviewProvider {
+    static var previews: some View {
+        PlaygroundView()
     }
 }

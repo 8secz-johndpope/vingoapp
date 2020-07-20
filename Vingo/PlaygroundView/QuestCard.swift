@@ -8,51 +8,31 @@
 import SwiftUI
 
 struct QuestCard: View {
-    var location: String
     var question: String
-        
-    internal init(question: String, location: String) {
-         self.location = location
-         self.question = question
-    }
     
     @State var attempts: Int = 0
      
     var body: some View {
-        VStack(alignment: .leading) {
-            HStack(alignment: .center) {
-                Text(self.location)
-                    .foregroundColor(.white)
-                    .font(.headline)
-                    .fontWeight(.black)
-                    .padding(.all, 8.0)
-                    .background(RoundedRectangle(cornerRadius: 10.0)
-                        .foregroundColor(.blue))
-                
-                Spacer()
-                ForEach(0 ..< 5) { item in
-                    RoundedRectangle(cornerRadius: 5.0)
-                        .frame(width: 15, height: 15)
-                        .foregroundColor(.blue)
-                }
-            }
-            Text(self.question).font(.largeTitle)
-            Text(self.location)
-                .foregroundColor(.black)
-                .fontWeight(.black)
-                .padding(.top, 5.0)
-                .font(.body)
+        ZStack(alignment: .center) {
+            Rectangle()
+                .foregroundColor(.white)
+                .rotationEffect(Angle.degrees(45))
+                .frame(width: 20, height: 20)
+                .offset(y: -45)
+            Text(self.question)
+                .font(.largeTitle)
+                .frame(width: UIScreen.main.bounds.width-30, height: 100)
+                .background(RoundedRectangle(cornerRadius: 20).foregroundColor(.white))
+                .modifier(Shake(animatableData: CGFloat(self.attempts)))
+                .onTapGesture { self.attempts += 1 }
         }
-        .padding()
-        .background(RoundedRectangle(cornerRadius: CGFloat(20)))
-        .foregroundColor(.white)
-        .onTapGesture { self.attempts += 1 }
-        .modifier(Shake(animatableData: CGFloat(self.attempts)))
+        .padding(.horizontal, 10.0)
+
     }
 }
 
 struct QuestCard_Previews: PreviewProvider {
     static var previews: some View {
-        QuestCard(question: "😘", location: "Мое сердечко")
+        QuestCard(question: "🐶🐶🐶🐶🐶🐶🐶")
     }
 }

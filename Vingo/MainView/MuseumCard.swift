@@ -11,6 +11,7 @@ struct MuseumCard: View {
     var body: some View {
         ZStack(alignment: .bottomLeading) {
             Image("hermitage").resizable()
+                .renderingMode(.original)
                 .frame(width: UIScreen.main.bounds.width-80.0, height: 400.0)
                 .mask(RoundedRectangle(cornerRadius: 40.0))
                 .shadow(radius: 10.0)
