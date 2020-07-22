@@ -5,6 +5,7 @@ import SwiftUI
 
 struct PlaygroundView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    var map = [Room(), Room(), Room(), Room()]
     
     var UpperControl: some View {
         HStack {
@@ -15,20 +16,14 @@ struct PlaygroundView: View {
      }
 
     var body: some View {
-        ZStack(alignment: .bottomTrailing) {
+        ZStack(alignment: .leading) {
             CameraViewController()
             VStack(alignment: .leading) {
                 UpperControl
                 Spacer()
 
-                VStack(alignment: .center) {
-                    MapLine(room: 1, picture: 1)
-                    HStack() {
-                        QuestCard(question: "🐶🐶🐶🐶🐶🐶🐶")
-                        QuestCard(question: "🐶🐶🐶🐶🐶🐶🐶")
-                        QuestCard(question: "🐶🐶🐶🐶🐶🐶🐶")
-                    }.padding()
-                }
+                MapLine(map: self.map)
+                SwipeableCards(map: self.map)
             }
         }
         .background(Color.black)

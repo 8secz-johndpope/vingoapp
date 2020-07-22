@@ -42,7 +42,8 @@ struct MuseumView: View {
                     Image(systemName: "location.fill")
                         .foregroundColor(Color(#colorLiteral(red: 0.3101347089, green: 0.2808781564, blue: 1, alpha: 1)))
                         .padding(.horizontal, 17)
-                        .padding(.vertical, 17)                    }.background((RoundedRectangle(cornerRadius: 50).foregroundColor(.white)))
+                        .padding(.vertical, 17)
+                }.background((RoundedRectangle(cornerRadius: 50).foregroundColor(.white)))
 
                 NavigationLink(destination: PlaygroundView()) {
                     Text("Start Explore")

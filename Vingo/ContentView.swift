@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject var app: AppStore
+
     var body: some View {
         NavigationView {
             MainView()

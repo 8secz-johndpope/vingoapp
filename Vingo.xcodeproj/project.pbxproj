@@ -30,6 +30,7 @@
 		FB9F0C0824C3A5A100AA1191 /* UIImage+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9F0C0724C3A5A000AA1191 /* UIImage+Helper.swift */; };
 		FB9F0C0A24C58ED400AA1191 /* MapLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9F0C0924C58ED400AA1191 /* MapLine.swift */; };
 		FBB5E5052457893300EF2C54 /* PlaygroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB5E5042457893300EF2C54 /* PlaygroundView.swift */; };
+		FBBFD3CD24C88F8000542654 /* SwipeableCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBFD3CC24C88F8000542654 /* SwipeableCards.swift */; };
 		FBF964E12453566E00E8EE2A /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF964DC2453566E00E8EE2A /* CameraController.swift */; };
 		FBF964E32453566E00E8EE2A /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF964DE2453566E00E8EE2A /* CameraViewController.swift */; };
 		FBF964E42453566E00E8EE2A /* ImagePredictor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF964DF2453566E00E8EE2A /* ImagePredictor.swift */; };
@@ -65,6 +66,7 @@
 		FB9F0C0724C3A5A000AA1191 /* UIImage+Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Helper.swift"; sourceTree = "<group>"; };
 		FB9F0C0924C58ED400AA1191 /* MapLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapLine.swift; sourceTree = "<group>"; };
 		FBB5E5042457893300EF2C54 /* PlaygroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaygroundView.swift; sourceTree = "<group>"; };
+		FBBFD3CC24C88F8000542654 /* SwipeableCards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeableCards.swift; sourceTree = "<group>"; };
 		FBF964DC2453566E00E8EE2A /* CameraController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
 		FBF964DE2453566E00E8EE2A /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		FBF964DF2453566E00E8EE2A /* ImagePredictor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePredictor.swift; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 				FB9931C424C1EC150020B441 /* QuestCard.swift */,
 				FBB5E5042457893300EF2C54 /* PlaygroundView.swift */,
 				FB9F0C0924C58ED400AA1191 /* MapLine.swift */,
+				FBBFD3CC24C88F8000542654 /* SwipeableCards.swift */,
 			);
 			path = PlaygroundView;
 			sourceTree = "<group>";
@@ -325,6 +328,7 @@
 				FBB5E5052457893300EF2C54 /* PlaygroundView.swift in Sources */,
 				FB9931D324C211D10020B441 /* MainView.swift in Sources */,
 				FB9931DA24C214030020B441 /* ImageCache.swift in Sources */,
+				FBBFD3CD24C88F8000542654 /* SwipeableCards.swift in Sources */,
 				A07753DD2343F15B00186969 /* TorchModule.mm in Sources */,
 				A07753C62343DDEE00186969 /* AppDelegate.swift in Sources */,
 				FB9931D824C213E20020B441 /* EnvironmentValues+ImageCache.swift in Sources */,
