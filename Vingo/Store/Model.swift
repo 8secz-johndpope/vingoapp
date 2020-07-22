@@ -9,29 +9,18 @@ import Foundation
 import Combine
 
 struct Picture: Codable, Identifiable {
-    let userId: Int;
-    let id: Int;
-    let title: String;
-    let completed: Bool
-    
-    static var placeholder: Self {
-        Picture(userId: 0, id: 0, title: "", completed: false)
-    }
+    let id = UUID()
+    let quest = "dog"
+    let title = "Moonlight"
+    let description = "About..."
+    let completed = false
+    let image = "url"
 }
 
-struct VingoAPI {
-    static let shared = VingoAPI()
-    private let baseURL = "https://jsonplaceholder.typicode.com/";
-    
-    public func fetchPictures() -> AnyPublisher<Picture, Never> {
-        let url = URL(string: baseURL + "todos/1")!
-        
-        return URLSession.shared.dataTaskPublisher(for: url)
-            .map { $0.data }
-            .decode(type: Picture.self, decoder: JSONDecoder())
-            .catch { error in Just(Picture.placeholder) }
-            .receive(on: RunLoop.main)
-            .eraseToAnyPublisher()
-    }
+struct Room {
+    let id = UUID()
+    let title = "Van Gogh"
+    let description = "About..."
+    let pictures = [Picture(), Picture(), Picture()]
+    let number = 1
 }
-
