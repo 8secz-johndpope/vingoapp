@@ -8,22 +8,24 @@
 import SwiftUI
 
 struct MuseumView: View {
+    @EnvironmentObject var app: AppStore
+
     var body: some View {
         VStack(alignment: .leading) {
-            Text("Hermitage")
+            Text(app.museum.title)
                 .font(.custom("Futura", size: 40))
                 .fontWeight(.bold)
                 .foregroundColor(Color(#colorLiteral(red: 0.3101347089, green: 0.2808781564, blue: 1, alpha: 1)))
                 .kerning(-2.3)
 
-            Text("Main Staff")
+            Text(app.museum.subtitle)
                 .font(.custom("Futura", size: 25))
                 .foregroundColor(Color(#colorLiteral(red: 0.3101347089, green: 0.2808781564, blue: 1, alpha: 1)))
                 .fontWeight(.bold)
                 .kerning(-1.55)
                 .padding(.top, -12.0)
             
-            Text("The State Hermitage Museum is a museum of art and culture in Saint Petersburg, Russia. The second largest art museum in the world, it was founded in 1764.")
+            Text(app.museum.description)
                 .font(.custom("PT Sans", size: 16))
                 .foregroundColor(Color(#colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)))
                 .fontWeight(.bold)
@@ -45,7 +47,7 @@ struct MuseumView: View {
                         .padding(.vertical, 17)
                 }.background((RoundedRectangle(cornerRadius: 50).foregroundColor(.white)))
 
-                NavigationLink(destination: PlaygroundView()) {
+                NavigationLink(destination: PlaygroundView().environmentObject(self.app)) {
                     Text("Start Explore")
                         .font(.custom("Futura", size: 20))
                         .fontWeight(.bold)

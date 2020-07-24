@@ -8,9 +8,11 @@
 import SwiftUI
 
 struct MuseumCard: View {
+    public let museum: Museum
+    
     var body: some View {
         ZStack(alignment: .bottomLeading) {
-            Image("hermitage").resizable()
+            Image(museum.image).resizable()
                 .renderingMode(.original)
                 .frame(width: UIScreen.main.bounds.width-80.0, height: 400.0)
                 .mask(RoundedRectangle(cornerRadius: 40.0))
@@ -26,13 +28,13 @@ struct MuseumCard: View {
                 })
             
             VStack(alignment: .leading, spacing: 10.0) {
-                Text("Main Staff")
+                Text(museum.subtitle)
                     .font(.custom("Futura", size: 35))
                     .fontWeight(.bold)
                     .foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)))
                     .kerning(-2.3)
                 
-                Text("Hermitage")
+                Text(museum.title)
                     .font(.custom("Futura", size: 35))
                     .fontWeight(.bold)
                     .foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)))
@@ -44,12 +46,5 @@ struct MuseumCard: View {
                     .foregroundColor(.white)
             }.padding(.all, 30.0)
         }.padding(.top, 20.0)
-    }
-}
-
-
-struct MuseumCard_Previews: PreviewProvider {
-    static var previews: some View {
-        MuseumCard()
     }
 }

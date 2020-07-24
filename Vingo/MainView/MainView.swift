@@ -1,6 +1,8 @@
 import SwiftUI
 
 struct MainView: View {
+    @EnvironmentObject var app: AppStore
+
     var body: some View {
         VStack(alignment: .leading) {
             Text("Vingo")
@@ -15,16 +17,13 @@ struct MainView: View {
                 .kerning(-1.24)
                 .padding(.top, 10.0)
             
-            NavigationLink(destination: MuseumView()) {
-                MuseumCard()
+            HStack {
+                ForEach(app.museums) { museum in
+                    NavigationLink(destination: MuseumView().environmentObject(self.app), tag: museum.id, selection: self.$app.activeMuseum) {
+                        MuseumCard(museum: museum)
+                    }
+                }
             }
         }
     }
 }
-
-struct MainView_Previews: PreviewProvider {
-    static var previews: some View {
-        MainView()
-    }
-}
-

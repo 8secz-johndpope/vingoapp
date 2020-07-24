@@ -12,7 +12,7 @@ struct ContentView: View {
 
     var body: some View {
         NavigationView {
-            MainView()
+            MainView().environmentObject(self.app)
         }.edgesIgnoringSafeArea(.top)
     }
 }
