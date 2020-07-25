@@ -8,7 +8,6 @@ struct MapElementPreferenceData {
 
 struct MapElementPreferenceKey: PreferenceKey {
     typealias Value = [MapElementPreferenceData]
-    
     static var defaultValue: [MapElementPreferenceData] = []
     
     static func reduce(value: inout [MapElementPreferenceData], nextValue: () -> [MapElementPreferenceData]) {
@@ -69,32 +68,30 @@ struct MapLine: View {
     
     var body: some View {
         HStack {
-            GeometryReader { geo in
-                HStack(alignment: .bottom) {
-                    ForEach(self.map, id: \.id) { room in
-                        RoomBadge(room: room, active: false)
-                    }
+            HStack(alignment: .bottom) {
+                ForEach(self.map, id: \.id) { room in
+                    RoomBadge(room: room, active: false)
                 }
-                .background(
-                  GeometryReader { proxy in
-                    Color.clear.onAppear {
-                        self.size = proxy.size
-                    }
-                })
-                .backgroundPreferenceValue(MapElementPreferenceKey.self) { preferences in
-                    GeometryReader { geometry in
-                        return Color.clear.onAppear {
-                            self.elements = []
-                            for p in preferences {
-                                let bounds = geometry[p.bounds]
-                                self.elements.append(bounds.midX)
-                            }
+            }
+            .background(
+              GeometryReader { proxy in
+                Color.clear.onAppear {
+                    self.size = proxy.size
+                }
+            })
+            .backgroundPreferenceValue(MapElementPreferenceKey.self) { preferences in
+                GeometryReader { geometry in
+                    return Color.clear.onAppear {
+                        self.elements = []
+                        for p in preferences {
+                            let bounds = geometry[p.bounds]
+                            self.elements.append(bounds.midX)
                         }
                     }
                 }
-                .offset(x: self.getOffset(), y: (UIScreen.main.bounds.height-190)/2)
-                .animation(.spring())
             }
+            .offset(x: self.getOffset())
+            .animation(.spring())
         }
     }
 }

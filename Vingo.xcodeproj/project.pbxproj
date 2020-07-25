@@ -19,11 +19,12 @@
 		FB6B0AB224CAF39F0026FD13 /* Bundle+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6B0AB124CAF39F0026FD13 /* Bundle+Helper.swift */; };
 		FB6B0AB424CB34360026FD13 /* words.txt in Resources */ = {isa = PBXBuildFile; fileRef = FB6B0AB324CB34360026FD13 /* words.txt */; };
 		FB6B0ABA24CB39D10026FD13 /* PlaygroundView..swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6B0AB924CB39D10026FD13 /* PlaygroundView..swift */; };
+		FB6B0ABC24CBB56E0026FD13 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6B0ABB24CBB56E0026FD13 /* Models.swift */; };
 		FB9931C524C1EC150020B441 /* QuestCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9931C424C1EC150020B441 /* QuestCard.swift */; };
 		FB9931C824C1EC5F0020B441 /* ShakeEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9931C724C1EC5F0020B441 /* ShakeEffect.swift */; };
 		FB9931CB24C1F0BD0020B441 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9931CA24C1F0BD0020B441 /* ContentView.swift */; };
 		FB9931CD24C1F5520020B441 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9931CC24C1F5520020B441 /* SceneDelegate.swift */; };
-		FB9931D024C208460020B441 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9931CF24C208460020B441 /* Model.swift */; };
+		FB9931D024C208460020B441 /* AppStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9931CF24C208460020B441 /* AppStore.swift */; };
 		FB9931D324C211D10020B441 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9931D224C211D10020B441 /* MainView.swift */; };
 		FB9931D624C213A80020B441 /* AsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9931D524C213A80020B441 /* AsyncImage.swift */; };
 		FB9931D824C213E20020B441 /* EnvironmentValues+ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9931D724C213E20020B441 /* EnvironmentValues+ImageCache.swift */; };
@@ -58,11 +59,12 @@
 		FB6B0AB124CAF39F0026FD13 /* Bundle+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Helper.swift"; sourceTree = "<group>"; };
 		FB6B0AB324CB34360026FD13 /* words.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = words.txt; sourceTree = "<group>"; };
 		FB6B0AB924CB39D10026FD13 /* PlaygroundView..swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlaygroundView..swift; path = ../../../../.Trash/PlaygroundView..swift; sourceTree = "<group>"; };
+		FB6B0ABB24CBB56E0026FD13 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		FB9931C424C1EC150020B441 /* QuestCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestCard.swift; sourceTree = "<group>"; };
 		FB9931C724C1EC5F0020B441 /* ShakeEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShakeEffect.swift; sourceTree = "<group>"; };
 		FB9931CA24C1F0BD0020B441 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		FB9931CC24C1F5520020B441 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FB9931CF24C208460020B441 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		FB9931CF24C208460020B441 /* AppStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStore.swift; sourceTree = "<group>"; };
 		FB9931D224C211D10020B441 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		FB9931D524C213A80020B441 /* AsyncImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImage.swift; sourceTree = "<group>"; };
 		FB9931D724C213E20020B441 /* EnvironmentValues+ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EnvironmentValues+ImageCache.swift"; sourceTree = "<group>"; };
@@ -195,7 +197,8 @@
 			isa = PBXGroup;
 			children = (
 				FBF964DF2453566E00E8EE2A /* ImagePredictor.swift */,
-				FB9931CF24C208460020B441 /* Model.swift */,
+				FB9931CF24C208460020B441 /* AppStore.swift */,
+				FB6B0ABB24CBB56E0026FD13 /* Models.swift */,
 			);
 			path = Store;
 			sourceTree = "<group>";
@@ -338,13 +341,14 @@
 				FB9F0C0424C3919900AA1191 /* MuseumView.swift in Sources */,
 				FB6B0ABA24CB39D10026FD13 /* PlaygroundView..swift in Sources */,
 				FB9931D324C211D10020B441 /* MainView.swift in Sources */,
+				FB6B0ABC24CBB56E0026FD13 /* Models.swift in Sources */,
 				FB9931DA24C214030020B441 /* ImageCache.swift in Sources */,
 				FBBFD3CD24C88F8000542654 /* SwipeableCards.swift in Sources */,
 				A07753DD2343F15B00186969 /* TorchModule.mm in Sources */,
 				A07753C62343DDEE00186969 /* AppDelegate.swift in Sources */,
 				FB9931D824C213E20020B441 /* EnvironmentValues+ImageCache.swift in Sources */,
 				FB9F0C0824C3A5A100AA1191 /* UIImage+Helper.swift in Sources */,
-				FB9931D024C208460020B441 /* Model.swift in Sources */,
+				FB9931D024C208460020B441 /* AppStore.swift in Sources */,
 				FB9F0C0124C390D800AA1191 /* MuseumCard.swift in Sources */,
 				FBF964E12453566E00E8EE2A /* CameraController.swift in Sources */,
 				FB9F0C0A24C58ED400AA1191 /* MapLine.swift in Sources */,

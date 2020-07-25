@@ -32,7 +32,7 @@ struct MuseumView: View {
                 .kerning(-0.75)
                 .lineSpacing(-5)
                 .padding(.top, 5.0)
-                .frame(width: UIScreen.main.bounds.width-20, height: 80)
+                .frame(width: UIScreen.main.bounds.width-50, height: 80)
             
             RoundedRectangle(cornerRadius: 10.0)
                 .frame(width: 200, height: 5)
@@ -58,7 +58,11 @@ struct MuseumView: View {
                     }.background((RoundedRectangle(cornerRadius: 50).foregroundColor(.white)))
             }.padding(.top, 20).shadow(radius: 20)
             Spacer()
-        }.padding(.top, 20)
+        }
+        .padding(.all, 100)
+        .navigationBarHidden(true)
+        .navigationBarTitle("")
+        .navigationBarBackButtonHidden(true)
     }
 }
 
