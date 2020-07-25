@@ -7,10 +7,25 @@
 
 import SwiftUI
 
+struct FitToWidth: ViewModifier {
+    var fraction: CGFloat = 1.0
+    func body(content: Content) -> some View {
+        GeometryReader { g in
+        content
+            .font(.system(size: 1000))
+            .minimumScaleFactor(0.005)
+            .lineLimit(1)
+            .frame(width: g.size.width*self.fraction)
+        }
+    }
+}
+
 struct PictureCard: View {
     var picture: Picture
     
     @State var attempts: Int = 0
+    let width = UIScreen.main.bounds.width
+    let height = UIScreen.main.bounds.height
      
     var body: some View {
         ZStack(alignment: .center) {
@@ -20,7 +35,7 @@ struct PictureCard: View {
                 .frame(width: 20, height: 20)
                 .offset(y: -55)
             Text(self.picture.quest)
-                .font(.custom("Futura", size: 50))
+                .modifier(FitToWidth(fraction: 0.9))
                 .frame(width: UIScreen.main.bounds.width-30, height: 120)
                 .background(RoundedRectangle(cornerRadius: 20).foregroundColor(.white))
                 .modifier(Shake(animatableData: CGFloat(self.attempts)))
