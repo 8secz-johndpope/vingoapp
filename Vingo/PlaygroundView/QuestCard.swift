@@ -20,7 +20,7 @@ struct PictureCard: View {
                 .frame(width: 20, height: 20)
                 .offset(y: -55)
             Text(self.picture.quest)
-                .font(.largeTitle)
+                .font(.custom("Futura", size: 50))
                 .frame(width: UIScreen.main.bounds.width-30, height: 120)
                 .background(RoundedRectangle(cornerRadius: 20).foregroundColor(.white))
                 .modifier(Shake(animatableData: CGFloat(self.attempts)))

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SwipeableCards: View {
-    public let map: [Room]
+    public let map: ArraySlice<Room>
     @Binding public var current: Int
 
     @State private var draggedOffset = CGSize.zero
@@ -20,6 +20,9 @@ struct SwipeableCards: View {
             ForEach(self.map, id: \.id) { room in
                 Group() {
                     RoomCard(room: room)
+                    ForEach(room.pictures, id: \.id) { picture in
+                        PictureCard(picture: picture)
+                    }
                 }
             }
         }
@@ -31,15 +34,14 @@ struct SwipeableCards: View {
         .offset(x: CGFloat(Int(self.size.width)/2) - UIScreen.main.bounds.width/2 - 10 - self.draggedOffset.width)
         .gesture(DragGesture()
             .onChanged { value in
-                print(value.translation.width)
                 self.draggedOffset.width = self.width * CGFloat(self.current) - value.translation.width
             }
             .onEnded { value in
                 let count = self.map.count
-                if (value.translation.width < -100 && self.current < count) {
+                if (value.translation.width < -100) {
                     self.current += 1
                 }
-                if (value.translation.width > 100 && self.current > 0) {
+                if (value.translation.width > 100) {
                     self.current -= 1
                 }
                 self.draggedOffset.width = self.width * CGFloat(self.current)

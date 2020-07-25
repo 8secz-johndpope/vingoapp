@@ -2,7 +2,7 @@ import Foundation
 import Combine
 
 struct Picture: Codable, Identifiable {
-    let id: Int?
+    let id: Int
     let type: String?
     let title: String
     let original_image: String?
@@ -13,7 +13,7 @@ struct Picture: Codable, Identifiable {
     let created: String?
     let room: Int?
     let image: String?
-    let quest = "🐶🐶🐶🐶🐶🐶"
+    let quest = "🐶🐶🐶🐶🐶🐶🐶"
     
     enum CodingKeys: String, CodingKey {
         case id
@@ -38,6 +38,7 @@ class Room: Codable, Identifiable {
     let links: [Int?]
     let items: [Int?]
     var pictures: [Picture] = []
+    var isBegin = false
     
     enum CodingKeys: String, CodingKey {
         case id
