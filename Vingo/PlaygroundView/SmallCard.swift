@@ -20,12 +20,16 @@ struct FitToWidth: ViewModifier {
     }
 }
 
-struct PictureCard: View {
-    var picture: Picture
-    
+struct SmallCard<Content: View>: View {
+    var content: () -> Content
+
     @State var attempts: Int = 0
     let width = UIScreen.main.bounds.width
     let height = UIScreen.main.bounds.height
+    
+    init(@ViewBuilder _ content: @escaping () -> Content) {
+        self.content = content
+    }
      
     var body: some View {
         ZStack(alignment: .center) {
@@ -34,30 +38,31 @@ struct PictureCard: View {
                 .rotationEffect(Angle.degrees(45))
                 .frame(width: 20, height: 20)
                 .offset(y: -55)
-            Text(self.picture.quest)
-                .modifier(FitToWidth(fraction: 0.9))
-                .frame(width: UIScreen.main.bounds.width-30, height: 120)
-                .background(RoundedRectangle(cornerRadius: 20).foregroundColor(.white))
-                .modifier(Shake(animatableData: CGFloat(self.attempts)))
-                .onTapGesture { self.attempts += 1 }
+            content().padding()
         }
+        .frame(width: UIScreen.main.bounds.width-30, height: 120)
+        .background(RoundedRectangle(cornerRadius: 20).foregroundColor(.white))
+        .modifier(Shake(animatableData: CGFloat(self.attempts)))
+        .onTapGesture { self.attempts += 1 }
         .padding(.horizontal, 10.0)
+    }
+}
 
+struct PictureCard: View {
+    var picture: Picture
+     
+    var body: some View {
+        SmallCard {
+            Text(self.picture.quest).modifier(FitToWidth())
+        }
     }
 }
 
 struct RoomCard: View {
     var room: Room
     
-    @State var attempts: Int = 0
-     
     var body: some View {
-        ZStack(alignment: .center) {
-            Rectangle()
-                .foregroundColor(.white)
-                .rotationEffect(Angle.degrees(45))
-                .frame(width: 20, height: 20)
-                .offset(y: -55)
+        SmallCard {
             VStack(alignment: .leading) {
                 Text(self.room.title)
                     .font(.custom("Futura", size: 20))
@@ -71,13 +76,7 @@ struct RoomCard: View {
                     .kerning(-0.75)
                     .lineSpacing(-5)
                     .padding(.top, 5.0)
-            }.padding()
-            .frame(width: UIScreen.main.bounds.width-30, height: 120)
-            .background(RoundedRectangle(cornerRadius: 20).foregroundColor(.white))
-            .modifier(Shake(animatableData: CGFloat(self.attempts)))
-            .onTapGesture { self.attempts += 1 }
+            }
         }
-        .padding(.horizontal, 10.0)
-
     }
 }

@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3E1804A5119C9CF7F0DD4F4A /* libPods-HelloWorld.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C60599D8EFFA454F1054D528 /* libPods-HelloWorld.a */; };
+		30257CF83683FDA936CB052B /* libPods-Vingo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 54A7BAD982487B2C3D46E7D2 /* libPods-Vingo.a */; };
 		A07753C62343DDEE00186969 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07753C52343DDEE00186969 /* AppDelegate.swift */; };
 		A07753CF2343DDEF00186969 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A07753CE2343DDEF00186969 /* Assets.xcassets */; };
 		A07753D22343DDEF00186969 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A07753D02343DDEF00186969 /* LaunchScreen.storyboard */; };
@@ -20,7 +20,9 @@
 		FB6B0AB424CB34360026FD13 /* words.txt in Resources */ = {isa = PBXBuildFile; fileRef = FB6B0AB324CB34360026FD13 /* words.txt */; };
 		FB6B0ABA24CB39D10026FD13 /* PlaygroundView..swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6B0AB924CB39D10026FD13 /* PlaygroundView..swift */; };
 		FB6B0ABC24CBB56E0026FD13 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6B0ABB24CBB56E0026FD13 /* Models.swift */; };
-		FB9931C524C1EC150020B441 /* QuestCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9931C424C1EC150020B441 /* QuestCard.swift */; };
+		FB6B0AC124CF15960026FD13 /* BackgroundParalax.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6B0AC024CF15960026FD13 /* BackgroundParalax.swift */; };
+		FB6B0AC324CF876D0026FD13 /* StoryCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6B0AC224CF876D0026FD13 /* StoryCard.swift */; };
+		FB9931C524C1EC150020B441 /* SmallCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9931C424C1EC150020B441 /* SmallCard.swift */; };
 		FB9931C824C1EC5F0020B441 /* ShakeEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9931C724C1EC5F0020B441 /* ShakeEffect.swift */; };
 		FB9931CB24C1F0BD0020B441 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9931CA24C1F0BD0020B441 /* ContentView.swift */; };
 		FB9931CD24C1F5520020B441 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9931CC24C1F5520020B441 /* SceneDelegate.swift */; };
@@ -43,7 +45,10 @@
 
 /* Begin PBXFileReference section */
 		278A9B2CDACABEF5F916C591 /* Pods-HelloWorld.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HelloWorld.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HelloWorld/Pods-HelloWorld.debug.xcconfig"; sourceTree = "<group>"; };
+		2F00D52CD86A408D07565725 /* Pods-Vingo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vingo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Vingo/Pods-Vingo.debug.xcconfig"; sourceTree = "<group>"; };
 		4165EB65F4307DD1715BF487 /* Pods-HelloWorld.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HelloWorld.release.xcconfig"; path = "Pods/Target Support Files/Pods-HelloWorld/Pods-HelloWorld.release.xcconfig"; sourceTree = "<group>"; };
+		54A7BAD982487B2C3D46E7D2 /* libPods-Vingo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Vingo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E9AAF586DE8994D6418A88B /* Pods-Vingo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vingo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Vingo/Pods-Vingo.release.xcconfig"; sourceTree = "<group>"; };
 		A07753C22343DDEE00186969 /* Vingo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vingo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A07753C52343DDEE00186969 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A07753CE2343DDEF00186969 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -52,7 +57,6 @@
 		A07753DA2343F15B00186969 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		A07753DB2343F15B00186969 /* TorchModule.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TorchModule.mm; sourceTree = "<group>"; };
 		A07753DC2343F15B00186969 /* TorchModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TorchModule.h; sourceTree = "<group>"; };
-		C60599D8EFFA454F1054D528 /* libPods-HelloWorld.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HelloWorld.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB3EBCBF2452310200C4E33A /* model.pt */ = {isa = PBXFileReference; lastKnownFileType = file; path = model.pt; sourceTree = "<group>"; };
 		FB6B0AAD24CAF0670026FD13 /* items.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = items.json; path = "../../../../scrape-hermitage/static/hermitage_staff/items.json"; sourceTree = "<group>"; };
 		FB6B0AAF24CAF06C0026FD13 /* rooms.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = rooms.json; path = "../../../../scrape-hermitage/static/hermitage_staff/rooms.json"; sourceTree = "<group>"; };
@@ -60,7 +64,9 @@
 		FB6B0AB324CB34360026FD13 /* words.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = words.txt; sourceTree = "<group>"; };
 		FB6B0AB924CB39D10026FD13 /* PlaygroundView..swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlaygroundView..swift; path = ../../../../.Trash/PlaygroundView..swift; sourceTree = "<group>"; };
 		FB6B0ABB24CBB56E0026FD13 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
-		FB9931C424C1EC150020B441 /* QuestCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestCard.swift; sourceTree = "<group>"; };
+		FB6B0AC024CF15960026FD13 /* BackgroundParalax.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundParalax.swift; sourceTree = "<group>"; };
+		FB6B0AC224CF876D0026FD13 /* StoryCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryCard.swift; sourceTree = "<group>"; };
+		FB9931C424C1EC150020B441 /* SmallCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallCard.swift; sourceTree = "<group>"; };
 		FB9931C724C1EC5F0020B441 /* ShakeEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShakeEffect.swift; sourceTree = "<group>"; };
 		FB9931CA24C1F0BD0020B441 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		FB9931CC24C1F5520020B441 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -86,7 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3E1804A5119C9CF7F0DD4F4A /* libPods-HelloWorld.a in Frameworks */,
+				30257CF83683FDA936CB052B /* libPods-Vingo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,6 +104,8 @@
 			children = (
 				278A9B2CDACABEF5F916C591 /* Pods-HelloWorld.debug.xcconfig */,
 				4165EB65F4307DD1715BF487 /* Pods-HelloWorld.release.xcconfig */,
+				2F00D52CD86A408D07565725 /* Pods-Vingo.debug.xcconfig */,
+				8E9AAF586DE8994D6418A88B /* Pods-Vingo.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -164,7 +172,7 @@
 		AF182EB80CBD3F64725105B6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C60599D8EFFA454F1054D528 /* libPods-HelloWorld.a */,
+				54A7BAD982487B2C3D46E7D2 /* libPods-Vingo.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -178,6 +186,7 @@
 				FBF964E02453566E00E8EE2A /* CVPixelBuffer+Helper.swift */,
 				FB9F0C0724C3A5A000AA1191 /* UIImage+Helper.swift */,
 				FB6B0AB124CAF39F0026FD13 /* Bundle+Helper.swift */,
+				FB6B0AC024CF15960026FD13 /* BackgroundParalax.swift */,
 			);
 			path = components;
 			sourceTree = "<group>";
@@ -185,10 +194,11 @@
 		FB9931C924C1ED3F0020B441 /* PlaygroundView */ = {
 			isa = PBXGroup;
 			children = (
-				FB9931C424C1EC150020B441 /* QuestCard.swift */,
+				FB9931C424C1EC150020B441 /* SmallCard.swift */,
 				FB9F0C0924C58ED400AA1191 /* MapLine.swift */,
 				FBBFD3CC24C88F8000542654 /* SwipeableCards.swift */,
 				FB6B0AB924CB39D10026FD13 /* PlaygroundView..swift */,
+				FB6B0AC224CF876D0026FD13 /* StoryCard.swift */,
 			);
 			path = PlaygroundView;
 			sourceTree = "<group>";
@@ -257,6 +267,8 @@
 			dependencies = (
 			);
 			name = Vingo;
+			packageProductDependencies = (
+			);
 			productName = HelloWorld;
 			productReference = A07753C22343DDEE00186969 /* Vingo.app */;
 			productType = "com.apple.product-type.application";
@@ -286,6 +298,8 @@
 				Base,
 			);
 			mainGroup = A07753B92343DDEE00186969;
+			packageReferences = (
+			);
 			productRefGroup = A07753C32343DDEE00186969 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -324,7 +338,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-HelloWorld-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Vingo-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -347,6 +361,7 @@
 				A07753DD2343F15B00186969 /* TorchModule.mm in Sources */,
 				A07753C62343DDEE00186969 /* AppDelegate.swift in Sources */,
 				FB9931D824C213E20020B441 /* EnvironmentValues+ImageCache.swift in Sources */,
+				FB6B0AC124CF15960026FD13 /* BackgroundParalax.swift in Sources */,
 				FB9F0C0824C3A5A100AA1191 /* UIImage+Helper.swift in Sources */,
 				FB9931D024C208460020B441 /* AppStore.swift in Sources */,
 				FB9F0C0124C390D800AA1191 /* MuseumCard.swift in Sources */,
@@ -356,11 +371,12 @@
 				FB9931D624C213A80020B441 /* AsyncImage.swift in Sources */,
 				FBF964E42453566E00E8EE2A /* ImagePredictor.swift in Sources */,
 				FB6B0AB224CAF39F0026FD13 /* Bundle+Helper.swift in Sources */,
+				FB6B0AC324CF876D0026FD13 /* StoryCard.swift in Sources */,
 				FB9931DC24C2141A0020B441 /* ImageLoader.swift in Sources */,
 				FB9931CB24C1F0BD0020B441 /* ContentView.swift in Sources */,
 				FB9931CD24C1F5520020B441 /* SceneDelegate.swift in Sources */,
 				FB9931C824C1EC5F0020B441 /* ShakeEffect.swift in Sources */,
-				FB9931C524C1EC150020B441 /* QuestCard.swift in Sources */,
+				FB9931C524C1EC150020B441 /* SmallCard.swift in Sources */,
 				FBF964E32453566E00E8EE2A /* CameraViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -495,7 +511,7 @@
 		};
 		A07753D72343DDEF00186969 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 278A9B2CDACABEF5F916C591 /* Pods-HelloWorld.debug.xcconfig */;
+			baseConfigurationReference = 2F00D52CD86A408D07565725 /* Pods-Vingo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -520,7 +536,7 @@
 		};
 		A07753D82343DDEF00186969 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4165EB65F4307DD1715BF487 /* Pods-HelloWorld.release.xcconfig */;
+			baseConfigurationReference = 8E9AAF586DE8994D6418A88B /* Pods-Vingo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;

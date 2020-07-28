@@ -61,6 +61,7 @@ struct MapLine: View {
     @State private var elements = [Int: CGFloat]()
     @State private var rect: CGRect = CGRect()
     @State var size: CGSize = .zero
+    @State var toggleAnim = false
 
     public let map: ArraySlice<Room>
     @Binding public var current: Int
@@ -94,9 +95,13 @@ struct MapLine: View {
                         }
                     }
                 }
+            }.onAppear {
+                Timer.scheduledTimer(withTimeInterval: 0.1, repeats: false) {_ in
+                    self.toggleAnim.toggle()
+                }
             }
             .offset(x: self.getOffset())
-            .animation(.spring())
+            .animation(self.toggleAnim ? .spring() : .none)
         }
     }
 }

@@ -1,50 +1,56 @@
-//
-//  SwipeableCards.swift
-//  Vingo
-//
-//  Created by Andrey Zhevlakov on 22.07.2020.
-//
-
 import SwiftUI
 
 struct SwipeableCards: View {
-    public let map: ArraySlice<Room>
-    @Binding public var current: Int
+    @EnvironmentObject var app: AppStore
 
+    public var width = UIScreen.main.bounds.width
     @State private var draggedOffset = CGSize.zero
     @State var size: CGSize = .zero
-    public var width = UIScreen.main.bounds.width
-    
+    @State var toggleAnim = false
+
     var body: some View {
         HStack(alignment: .bottom, spacing: 10) {
-            ForEach(self.map, id: \.id) { room in
+            ForEach(self.app.map, id: \.id) { room in
                 Group() {
                     RoomCard(room: room)
                     ForEach(room.pictures, id: \.id) { picture in
                         PictureCard(picture: picture)
                     }
-                }
+                }.opacity(self.app.activeRoom?.id == room.id ? 1 : 0)
+            }
+        }.onAppear {
+            Timer.scheduledTimer(withTimeInterval: 0.1, repeats: false) {_ in
+                self.toggleAnim.toggle()
             }
         }
         .padding()
-        .animation(.spring())
+        .animation(self.toggleAnim ? .spring() : .none)
         .background( GeometryReader { proxy in Color.clear.onAppear {
             self.size = proxy.size
         }})
         .offset(x: CGFloat(Int(self.size.width)/2) - UIScreen.main.bounds.width/2 - 10 - self.draggedOffset.width)
         .gesture(DragGesture()
             .onChanged { value in
-                self.draggedOffset.width = self.width * CGFloat(self.current) - value.translation.width
+                if (abs(value.translation.height) > 10) {
+                    self.draggedOffset.height = value.translation.height
+                    return
+                }
+                
+                self.draggedOffset.width = self.width * CGFloat(self.app.selectedIndex) - value.translation.width
             }
             .onEnded { value in
-                let count = self.map.count
                 if (value.translation.width < -100) {
-                    self.current += 1
+                    self.app.selectedIndex += 1
                 }
                 if (value.translation.width > 100) {
-                    self.current -= 1
+                    self.app.selectedIndex -= 1
                 }
-                self.draggedOffset.width = self.width * CGFloat(self.current)
+                
+                if (value.translation.height < -50) {
+                    self.app.storyMode = true
+                }
+
+                self.draggedOffset.width = self.width * CGFloat(self.app.selectedIndex)
             })
     }
 }

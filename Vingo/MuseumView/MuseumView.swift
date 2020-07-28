@@ -5,10 +5,35 @@
 //  Created by Andrey Zhevlakov on 18.07.2020.
 //
 
+import Foundation
 import SwiftUI
+import UIKit
+import MapKit
 
 struct MuseumView: View {
     @EnvironmentObject var app: AppStore
+    
+    func openMapForPlace() {
+        let lat1 : NSString = "37.2"
+        let lng1 : NSString = "22.9"
+
+        let latitude:CLLocationDegrees =  lat1.doubleValue
+        let longitude:CLLocationDegrees =  lng1.doubleValue
+
+        let regionDistance:CLLocationDistance = 10000
+        let coordinates = CLLocationCoordinate2DMake(latitude, longitude)
+        let regionSpan = MKCoordinateRegion(center: coordinates, latitudinalMeters: regionDistance, longitudinalMeters: regionDistance)
+        let options = [
+            MKLaunchOptionsMapCenterKey: NSValue(mkCoordinate: regionSpan.center),
+            MKLaunchOptionsMapSpanKey: NSValue(mkCoordinateSpan: regionSpan.span)
+        ]
+        let placemark = MKPlacemark(coordinate: coordinates, addressDictionary: nil)
+        let mapItem = MKMapItem(placemark: placemark)
+        mapItem.name = "Hermitage"
+        mapItem.openInMaps(launchOptions: options)
+
+    }
+
 
     var body: some View {
         VStack(alignment: .leading) {
@@ -40,7 +65,7 @@ struct MuseumView: View {
                 .padding(.top, 5.0)
             
             HStack(alignment: .center, spacing: 20) {
-                Button(action: {}) {
+                Button(action: { self.openMapForPlace() }) {
                     Image(systemName: "location.fill")
                         .foregroundColor(Color(#colorLiteral(red: 0.3101347089, green: 0.2808781564, blue: 1, alpha: 1)))
                         .padding(.horizontal, 17)
