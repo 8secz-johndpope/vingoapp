@@ -62,6 +62,9 @@ struct Story: View {
                     self.draggedOffset.height = value.translation.height
                 }
                 .onEnded { value in
+                    self.draggedOffset.height = 0
+                    self.draggedOffset.width = 0
+                    
                     if (value.translation.height > 100) {
                         self.storyMode = false;
                         self.index = 0
@@ -75,9 +78,6 @@ struct Story: View {
                     if (value.translation.width > 100 && self.index < (self.getStories()?.count ?? 1)-1) {
                         self.index += 1
                     }
-                    
-                    self.draggedOffset.height = -UIScreen.main.bounds.height/2
-                    self.draggedOffset.width = 0
                 })
     }
 }

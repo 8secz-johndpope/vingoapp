@@ -18,6 +18,16 @@ func getRooms() -> [Room] {
     
     rooms = rooms.sorted(by: { $0.id < $1.id }).filter({ $0.pictures.count > 1})
     
+    var ind = 0
+    rooms.forEach { room in
+        room.index = ind
+        ind += 1
+        room.pictures.forEach { picture in
+            picture.index = ind
+            ind += 1
+        }
+    }
+    
     return rooms;
 }
 
@@ -27,7 +37,7 @@ class AppStore: ObservableObject {
     @Published var activeMuseum: Int?
     @Published var activeRoom: Room?
     @Published var activePicture: Picture?
-    @Published var map: ArraySlice<Room> = []
+    @Published var map: [MuseumElement] = []
     @Published var activeElement: Int = 0
 
     @Published var selectedIndex = 0 {
@@ -75,7 +85,13 @@ class AppStore: ObservableObject {
     ]
     
     init() {
-        self.map = self.museum.rooms[0..<self.museum.rooms.count]
+        self.museum.rooms.forEach { room in
+            self.map.append(room)
+            room.pictures.forEach { picture in
+                self.map.append(picture)
+            }
+        }
+
         self.line = self.museum.rooms.flatMap({ r in [r.id] + r.pictures.map { $0.id } })
         self.selectedIndex = 0
     }

@@ -52,9 +52,7 @@ struct PictureCard: View {
     var picture: Picture
      
     var body: some View {
-        SmallCard {
-            Text(self.picture.quest).modifier(FitToWidth())
-        }
+        Text(self.picture.quest).modifier(FitToWidth()).padding()
     }
 }
 
@@ -62,7 +60,6 @@ struct RoomCard: View {
     var room: Room
     
     var body: some View {
-        SmallCard {
             VStack(alignment: .leading) {
                 Text(self.room.title)
                     .font(.custom("Futura", size: 20))
@@ -76,7 +73,6 @@ struct RoomCard: View {
                     .kerning(-0.75)
                     .lineSpacing(-5)
                     .padding(.top, 5.0)
-            }
-        }
+        }.padding()
     }
 }

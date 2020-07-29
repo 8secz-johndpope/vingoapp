@@ -1,7 +1,19 @@
 import Foundation
 import Combine
 
-struct Picture: Codable, Identifiable {
+enum ElementType {
+    case picture
+    case room
+}
+
+protocol MuseumElement {
+    var _type: ElementType { get }
+    var id: Int { get }
+}
+
+class Picture: MuseumElement, Codable, Identifiable {
+    let _type = ElementType.picture
+    
     let id: Int
     let type: String?
     let title: String
@@ -14,6 +26,7 @@ struct Picture: Codable, Identifiable {
     let room: Int?
     let image: String?
     let quest = "🐶🐶🐶🐶🐶🐶🐶"
+    var index = 0
     
     enum CodingKeys: String, CodingKey {
         case id
@@ -30,7 +43,8 @@ struct Picture: Codable, Identifiable {
     }
 }
 
-class Room: Codable, Identifiable {
+class Room: MuseumElement, Codable, Identifiable {
+    let _type = ElementType.room
     let id: Int
     let title: String
     let floor: Int
@@ -39,6 +53,7 @@ class Room: Codable, Identifiable {
     let items: [Int?]
     var pictures: [Picture] = []
     var isBegin = false
+    var index = 0
     
     enum CodingKeys: String, CodingKey {
         case id

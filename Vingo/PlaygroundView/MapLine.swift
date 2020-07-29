@@ -49,6 +49,7 @@ struct RoomBadge: View {
             .padding(.horizontal, 15)
             .padding(.vertical, 5)
             .foregroundColor(.white)
+            .frame(width: 60)
             .background(RoundedRectangle(cornerRadius: 50)
                 .overlay(RoundedRectangle(cornerRadius: 50).stroke(self.active  ? Color(#colorLiteral(red: 0.3101347089, green: 0.2808781564, blue: 1, alpha: 1)) : Color.clear, style: StrokeStyle(lineWidth: 4)))
                 .foregroundColor(.white)
@@ -63,7 +64,7 @@ struct MapLine: View {
     @State var size: CGSize = .zero
     @State var toggleAnim = false
 
-    public let map: ArraySlice<Room>
+    public let map: [Room]
     @Binding public var current: Int
 
     private func getOffset() -> CGFloat {
