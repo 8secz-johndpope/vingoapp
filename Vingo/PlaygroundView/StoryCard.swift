@@ -47,12 +47,12 @@ struct Story: View {
         if let picture = self.element as? Picture {
             let stories = picture.description?.split(separator: ".") ?? [""]
             DispatchQueue.main.async {
-                self.maxSwipes += stories.count
+                self.maxSwipes = stories.count
             }
 
             return AnyView(VStack(alignment: .leading) {
                 Spacer()
-                Text(stories.count != 0 ? stories[self.index] : "")
+                Text(stories[self.index])
                         .font(.custom("Futura", size: 20))
                         .fontWeight(.bold)
                         .foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)))
@@ -101,11 +101,10 @@ struct Story: View {
             .background(self.makeBackground())
             .offset(y: self.active ? max(-10, draggedOffset.height) : UIScreen.main.bounds.height)
             .frame(width: UIScreen.main.bounds.width-80, height: UIScreen.main.bounds.height-200)
-            .padding(.horizontal, 10.0)
-            .animation(.spring())
-
             .rotation3DEffect(.degrees(self.getRotate()), axis: (x: 0.0, y: 1.0, z: 0.0))
             .rotation3DEffect(.degrees(self.rotation), axis: (x: 0.0, y: 1.0, z: 0.0))
+            .padding(.horizontal, 10.0)
+            .animation(.spring())
             .onReceive(self.timer) {data in
                 self.delta += 0.1
                 self.rotation = 10 * sin(self.delta)
