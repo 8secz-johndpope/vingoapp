@@ -7,16 +7,21 @@ struct SwipeableCards: View {
     @State private var draggedOffset = CGSize.zero
     @State var size: CGSize = .zero
     @State var toggleAnim = false
+    
+    func makeView(_ element: MuseumElement) -> AnyView {
+        if let room = element as? Room {
+            return AnyView(RoomCard(room: room))
+        } else if let picture = element as? Picture {
+            return AnyView(PictureCard(picture: picture))
+        } else {
+            return AnyView(Text("ПОШЕЛ НАХУЙ"))
+        }
+    }
 
     var body: some View {
-        HStack(alignment: .bottom, spacing: 10) {
-            ForEach(self.app.map, id: \.id) { room in
-                Group() {
-                    RoomCard(room: room)
-                    ForEach(room.pictures, id: \.id) { picture in
-                        PictureCard(picture: picture)
-                    }
-                }.opacity(self.app.activeRoom?.id == room.id ? 1 : 0)
+        ZStack(alignment: .bottom) {
+            ForEach(self.app.map[max(self.app.selectedIndex-3, 0)..<self.app.selectedIndex+3], id: \.id) { element in
+                self.makeView(element).offset(x: CGFloat(element.index)*UIScreen.main.bounds.width)
             }
         }.onAppear {
             Timer.scheduledTimer(withTimeInterval: 0.1, repeats: false) {_ in
