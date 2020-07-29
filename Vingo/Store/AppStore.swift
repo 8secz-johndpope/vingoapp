@@ -16,7 +16,7 @@ func getRooms() -> [Room] {
         }
     }
     
-    rooms = rooms.sorted(by: { $0.id < $1.id }).filter({ $0.pictures.count > 1})
+    rooms = rooms.sorted(by: { $0.id < $1.id }).filter({ $0.pictures.count > 1 && $0.floor == 3})
     
     return rooms;
 }
