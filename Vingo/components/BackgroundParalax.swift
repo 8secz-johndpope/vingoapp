@@ -12,7 +12,7 @@ let emoji = ["🐶","🔥","🏛","🏛"]
 struct BackgroundParalax: View {
     var body: some View {
         Group {
-            ForEach(-2..<15) { y in
+            ForEach(-5..<15) { y in
                 Group {
                     ForEach(-5..<15) { x in
                         Text(emoji[Int.random(in: 0..<4)])

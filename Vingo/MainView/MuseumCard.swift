@@ -19,13 +19,15 @@ struct MuseumCard: View {
                 .shadow(radius: 10.0)
                 .scaledToFill()
             
-            RoundedRectangle(cornerRadius: 40.0)
-                .foregroundColor(Color(#colorLiteral(red: 0.3101347089, green: 0.2808781564, blue: 1, alpha: 1)))
-                .frame(width: UIScreen.main.bounds.width-80.0, height: 400.0)
-                .mask(ZStack {
-                    Circle().frame(width: 300, height: 300).offset(x: 50, y: 220)
-                    Circle().stroke(lineWidth: 5).frame(width: 330, height: 330).offset(x: 50, y: 220)
-                })
+            if !museum.locked {
+                RoundedRectangle(cornerRadius: 40.0)
+                    .foregroundColor(Color(#colorLiteral(red: 0.3101347089, green: 0.2808781564, blue: 1, alpha: 1)))
+                    .frame(width: UIScreen.main.bounds.width-80.0, height: 400.0)
+                    .mask(ZStack {
+                        Circle().frame(width: 300, height: 300).offset(x: 50, y: 220)
+                        Circle().stroke(lineWidth: 5).frame(width: 330, height: 330).offset(x: 50, y: 220)
+                    })
+            }
             
             VStack(alignment: .leading, spacing: 10.0) {
                 Text(museum.subtitle)

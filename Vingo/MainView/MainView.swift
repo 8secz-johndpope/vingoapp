@@ -1,5 +1,13 @@
 import SwiftUI
 
+struct MuseumButtonStyle: ButtonStyle {
+    func makeBody(configuration: Self.Configuration) -> some View {
+        configuration.label
+            .foregroundColor(Color.white)
+            .scaleEffect(configuration.isPressed ? 0.9 : 1.0, anchor: .center)
+    }
+}
+
 struct MainView: View {
     @EnvironmentObject var app: AppStore
     
@@ -25,12 +33,13 @@ struct MainView: View {
                     .shadow(radius: 5)
 
                 
-                HStack {
+                HStack(alignment: .center, spacing: 0) {
                     ForEach(app.museums) { museum in
-                        NavigationLink(destination: MuseumView().environmentObject(self.app), tag: museum.id, selection: self.$app.activeMuseum) {
+                        NavigationLink(destination: MuseumView().environmentObject(self.app)) {
                             MuseumCard(museum: museum)
                         }
-                        .buttonStyle(PlainButtonStyle())
+                        .disabled(museum.locked)
+                        .buttonStyle(MuseumButtonStyle())
                         .frame(width: self.width)
                         .scaleEffect(museum.id == self.current ? 1 : 0.7)
                         .animation(.spring())

@@ -14,7 +14,7 @@ struct SwipeableCards: View {
         } else if let picture = element as? Picture {
             return AnyView(PictureCard(picture: picture))
         } else {
-            return AnyView(Text("ПОШЕЛ НАХУЙ"))
+            return AnyView(Text(""))
         }
     }
 
@@ -47,6 +47,7 @@ struct SwipeableCards: View {
                 if (value.translation.width < -100) {
                     self.app.selectedIndex += 1
                 }
+
                 if (value.translation.width > 100) {
                     self.app.selectedIndex -= 1
                 }

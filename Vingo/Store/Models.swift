@@ -1,20 +1,43 @@
 import Foundation
 import Combine
+import SwiftUI
 
-enum ElementType {
-    case picture
-    case room
-}
+
 
 protocol MuseumElement {
-    var _type: ElementType { get }
     var id: Int { get }
     var index: Int { get set }
 }
 
-class Picture: MuseumElement, Codable, Identifiable {
-    let _type = ElementType.picture
+struct Achievement: MuseumElement, Codable, Identifiable {
+    let id: Int
+    let title: String
+    let description: String
+    let icon: String
+    let total: Int
+    var index = 0
+
+    let x: CGFloat
+    let y: CGFloat
+    let width: CGFloat
+    let height: CGFloat
+    let rx: CGFloat
     
+    enum CodingKeys: String, CodingKey {
+        case id
+        case title
+        case icon
+        case description
+        case total
+        case x
+        case y
+        case width
+        case height
+        case rx
+    }
+}
+
+class Picture: MuseumElement, Codable, Identifiable {
     let id: Int
     let type: String?
     let title: String
@@ -45,7 +68,6 @@ class Picture: MuseumElement, Codable, Identifiable {
 }
 
 class Room: MuseumElement, Codable, Identifiable {
-    let _type = ElementType.room
     let id: Int
     let title: String
     let floor: Int
@@ -65,15 +87,13 @@ class Room: MuseumElement, Codable, Identifiable {
     }
 }
 
-struct Museum: Codable, Identifiable {
+struct Museum: Identifiable {
     let id: Int
     let title: String
     let subtitle: String
     let image: String
     let description: String
     let rooms: [Room]
-    
-    static func placeholder() -> Museum {
-        Museum(id: 0, title: "", subtitle: "", image: "", description: "", rooms: [])
-    }
+    let achievements: [Achievement]
+    let locked: Bool
 }

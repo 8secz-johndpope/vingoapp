@@ -31,14 +31,18 @@ func getRooms() -> [Room] {
     return rooms;
 }
 
+var achivki = Bundle.main.decode([Achievement].self, from: "achivki.json")
+
 
 class AppStore: ObservableObject {
-    @Published var storyMode = false
-    @Published var activeMuseum: Int?
+    @Published var museum: Museum
     @Published var activeRoom: Room?
     @Published var activePicture: Picture?
-    @Published var map: [MuseumElement] = []
+    @Published var activeAchievement: Achievement?
+
+    @Published var storyMode = false
     @Published var activeElement: Int = 0
+    @Published var map: [MuseumElement] = []
 
     @Published var selectedIndex = 0 {
         didSet {
@@ -46,11 +50,11 @@ class AppStore: ObservableObject {
                 self.selectedIndex = 0
             }
             
-            if self.selectedIndex >= self.line.count {
-                self.selectedIndex = self.line.count-1
+            if self.selectedIndex >= self.map.count {
+                self.selectedIndex = self.map.count-1
             }
             
-            self.activeElement = self.line[self.selectedIndex]
+            self.activeElement = self.map[self.selectedIndex].id
     
             // TODO: Fix for prev
             if let room = self.getRoom(self.activeElement, self.museum.rooms) {
@@ -62,8 +66,13 @@ class AppStore: ObservableObject {
             }
         }
     }
-
-    var line: [Int] = []
+    
+    // Do recognize
+    var predict: ([Float], Double) = ([], 0) {
+        didSet {
+            
+        }
+    }
 
     public let museums = [
         Museum(
@@ -72,36 +81,33 @@ class AppStore: ObservableObject {
             subtitle: "Main Stuff",
             image: "hermitage",
             description: "The State Hermitage Museum is a museum of art and culture in Saint Petersburg, Russia. The second largest art museum in the world, it was founded in 1764.",
-            rooms: getRooms()
+            rooms: getRooms(),
+            achievements: achivki,
+            locked: false
         ),
         Museum(
             id: 1,
             title: "Luvr",
             subtitle: "",
-            image: "hermitage",
+            image: "luvr",
             description: "About...",
-            rooms: []
+            rooms: [],
+            achievements: [],
+            locked: true
         )
     ]
     
     init() {
+        // Hardcode for only first museum
+        self.museum = self.museums[0]
         self.museum.rooms.forEach { room in
             self.map.append(room)
             room.pictures.forEach { picture in
                 self.map.append(picture)
             }
         }
-
-        self.line = self.museum.rooms.flatMap({ r in [r.id] + r.pictures.map { $0.id } })
         self.selectedIndex = 0
-    }
-    
-    public var museum: Museum {
-        get { self.getMuseum(id: self.activeMuseum ?? 0) }
-    }
-    
-    public func getMuseum(id: Int) -> Museum {
-        return self.museums.first(where: { $0.id == id }) ?? Museum.placeholder()
+        self.activeAchievement = self.museum.achievements[0]
     }
     
     public func getRoom(_ id: Int, _ rooms: [Room]) -> Room? { rooms.first(where: { $0.id == id })}

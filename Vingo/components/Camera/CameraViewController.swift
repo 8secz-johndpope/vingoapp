@@ -3,12 +3,14 @@ import UIKit
 import SwiftUI
 
 final class CameraViewController: UIViewController {
+    @EnvironmentObject var app: AppStore
+
     private var predictor = ImagePredictor()
     private var cameraController = CameraController()
     private let delayMs: Double = 500
     private var prevTimestampMs: Double = 0.0
     var previewView: UIView!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -32,7 +34,7 @@ final class CameraViewController: UIViewController {
             // Do predict
             if let results = try? strongSelf.predictor.predict(pixelBuffer, resultCount: 3) {
                 DispatchQueue.main.async {
-                    print(results)
+                    self?.app.predict = results
                 }
             }
         }

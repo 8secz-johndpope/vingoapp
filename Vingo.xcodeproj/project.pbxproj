@@ -22,16 +22,16 @@
 		FB6B0ABC24CBB56E0026FD13 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6B0ABB24CBB56E0026FD13 /* Models.swift */; };
 		FB6B0AC124CF15960026FD13 /* BackgroundParalax.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6B0AC024CF15960026FD13 /* BackgroundParalax.swift */; };
 		FB6B0AC324CF876D0026FD13 /* StoryCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6B0AC224CF876D0026FD13 /* StoryCard.swift */; };
+		FB6B0ACC24D1F2630026FD13 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6B0ACB24D1F2630026FD13 /* LottieView.swift */; };
+		FB6EF23F24D4451A0028A17E /* AchievementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6EF23E24D4451A0028A17E /* AchievementView.swift */; };
+		FB6EF24124D575E40028A17E /* confetti.json in Resources */ = {isa = PBXBuildFile; fileRef = FB6EF24024D575E40028A17E /* confetti.json */; };
+		FB6EF24324D5773B0028A17E /* achivki.json in Resources */ = {isa = PBXBuildFile; fileRef = FB6EF24224D5773B0028A17E /* achivki.json */; };
 		FB9931C524C1EC150020B441 /* SmallCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9931C424C1EC150020B441 /* SmallCard.swift */; };
 		FB9931C824C1EC5F0020B441 /* ShakeEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9931C724C1EC5F0020B441 /* ShakeEffect.swift */; };
 		FB9931CB24C1F0BD0020B441 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9931CA24C1F0BD0020B441 /* ContentView.swift */; };
 		FB9931CD24C1F5520020B441 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9931CC24C1F5520020B441 /* SceneDelegate.swift */; };
 		FB9931D024C208460020B441 /* AppStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9931CF24C208460020B441 /* AppStore.swift */; };
 		FB9931D324C211D10020B441 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9931D224C211D10020B441 /* MainView.swift */; };
-		FB9931D624C213A80020B441 /* AsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9931D524C213A80020B441 /* AsyncImage.swift */; };
-		FB9931D824C213E20020B441 /* EnvironmentValues+ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9931D724C213E20020B441 /* EnvironmentValues+ImageCache.swift */; };
-		FB9931DA24C214030020B441 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9931D924C214030020B441 /* ImageCache.swift */; };
-		FB9931DC24C2141A0020B441 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9931DB24C2141A0020B441 /* ImageLoader.swift */; };
 		FB9F0C0124C390D800AA1191 /* MuseumCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9F0C0024C390D800AA1191 /* MuseumCard.swift */; };
 		FB9F0C0424C3919900AA1191 /* MuseumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9F0C0324C3919900AA1191 /* MuseumView.swift */; };
 		FB9F0C0824C3A5A100AA1191 /* UIImage+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9F0C0724C3A5A000AA1191 /* UIImage+Helper.swift */; };
@@ -66,16 +66,16 @@
 		FB6B0ABB24CBB56E0026FD13 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		FB6B0AC024CF15960026FD13 /* BackgroundParalax.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundParalax.swift; sourceTree = "<group>"; };
 		FB6B0AC224CF876D0026FD13 /* StoryCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryCard.swift; sourceTree = "<group>"; };
+		FB6B0ACB24D1F2630026FD13 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
+		FB6EF23E24D4451A0028A17E /* AchievementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementView.swift; sourceTree = "<group>"; };
+		FB6EF24024D575E40028A17E /* confetti.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = confetti.json; sourceTree = "<group>"; };
+		FB6EF24224D5773B0028A17E /* achivki.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = achivki.json; sourceTree = "<group>"; };
 		FB9931C424C1EC150020B441 /* SmallCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallCard.swift; sourceTree = "<group>"; };
 		FB9931C724C1EC5F0020B441 /* ShakeEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShakeEffect.swift; sourceTree = "<group>"; };
 		FB9931CA24C1F0BD0020B441 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		FB9931CC24C1F5520020B441 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		FB9931CF24C208460020B441 /* AppStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStore.swift; sourceTree = "<group>"; };
 		FB9931D224C211D10020B441 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
-		FB9931D524C213A80020B441 /* AsyncImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImage.swift; sourceTree = "<group>"; };
-		FB9931D724C213E20020B441 /* EnvironmentValues+ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EnvironmentValues+ImageCache.swift"; sourceTree = "<group>"; };
-		FB9931D924C214030020B441 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
-		FB9931DB24C2141A0020B441 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		FB9F0C0024C390D800AA1191 /* MuseumCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuseumCard.swift; sourceTree = "<group>"; };
 		FB9F0C0324C3919900AA1191 /* MuseumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuseumView.swift; sourceTree = "<group>"; };
 		FB9F0C0724C3A5A000AA1191 /* UIImage+Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Helper.swift"; sourceTree = "<group>"; };
@@ -141,6 +141,8 @@
 				A07753CE2343DDEF00186969 /* Assets.xcassets */,
 				A07753D02343DDEF00186969 /* LaunchScreen.storyboard */,
 				A07753D32343DDEF00186969 /* Info.plist */,
+				FB6EF24024D575E40028A17E /* confetti.json */,
+				FB6EF24224D5773B0028A17E /* achivki.json */,
 				FB9931CA24C1F0BD0020B441 /* ContentView.swift */,
 				FB9931CC24C1F5520020B441 /* SceneDelegate.swift */,
 			);
@@ -181,12 +183,12 @@
 			isa = PBXGroup;
 			children = (
 				FBF964DB2453566E00E8EE2A /* Camera */,
-				FB9931D424C213900020B441 /* AsyncImage */,
 				FB9931C724C1EC5F0020B441 /* ShakeEffect.swift */,
 				FBF964E02453566E00E8EE2A /* CVPixelBuffer+Helper.swift */,
 				FB9F0C0724C3A5A000AA1191 /* UIImage+Helper.swift */,
 				FB6B0AB124CAF39F0026FD13 /* Bundle+Helper.swift */,
 				FB6B0AC024CF15960026FD13 /* BackgroundParalax.swift */,
+				FB6B0ACB24D1F2630026FD13 /* LottieView.swift */,
 			);
 			path = components;
 			sourceTree = "<group>";
@@ -222,21 +224,11 @@
 			path = MainView;
 			sourceTree = "<group>";
 		};
-		FB9931D424C213900020B441 /* AsyncImage */ = {
-			isa = PBXGroup;
-			children = (
-				FB9931D524C213A80020B441 /* AsyncImage.swift */,
-				FB9931D724C213E20020B441 /* EnvironmentValues+ImageCache.swift */,
-				FB9931D924C214030020B441 /* ImageCache.swift */,
-				FB9931DB24C2141A0020B441 /* ImageLoader.swift */,
-			);
-			path = AsyncImage;
-			sourceTree = "<group>";
-		};
 		FB9F0C0224C3917B00AA1191 /* MuseumView */ = {
 			isa = PBXGroup;
 			children = (
 				FB9F0C0324C3919900AA1191 /* MuseumView.swift */,
+				FB6EF23E24D4451A0028A17E /* AchievementView.swift */,
 			);
 			path = MuseumView;
 			sourceTree = "<group>";
@@ -315,6 +307,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB3EBCC12452348900C4E33A /* model.pt in Resources */,
+				FB6EF24324D5773B0028A17E /* achivki.json in Resources */,
+				FB6EF24124D575E40028A17E /* confetti.json in Resources */,
 				FB6B0AB424CB34360026FD13 /* words.txt in Resources */,
 				FB3EBCBE24522FCA00C4E33A /* Info.plist in Resources */,
 				FB6B0AAE24CAF0670026FD13 /* items.json in Resources */,
@@ -354,13 +348,13 @@
 			files = (
 				FB9F0C0424C3919900AA1191 /* MuseumView.swift in Sources */,
 				FB6B0ABA24CB39D10026FD13 /* PlaygroundView..swift in Sources */,
+				FB6B0ACC24D1F2630026FD13 /* LottieView.swift in Sources */,
 				FB9931D324C211D10020B441 /* MainView.swift in Sources */,
+				FB6EF23F24D4451A0028A17E /* AchievementView.swift in Sources */,
 				FB6B0ABC24CBB56E0026FD13 /* Models.swift in Sources */,
-				FB9931DA24C214030020B441 /* ImageCache.swift in Sources */,
 				FBBFD3CD24C88F8000542654 /* SwipeableCards.swift in Sources */,
 				A07753DD2343F15B00186969 /* TorchModule.mm in Sources */,
 				A07753C62343DDEE00186969 /* AppDelegate.swift in Sources */,
-				FB9931D824C213E20020B441 /* EnvironmentValues+ImageCache.swift in Sources */,
 				FB6B0AC124CF15960026FD13 /* BackgroundParalax.swift in Sources */,
 				FB9F0C0824C3A5A100AA1191 /* UIImage+Helper.swift in Sources */,
 				FB9931D024C208460020B441 /* AppStore.swift in Sources */,
@@ -368,11 +362,9 @@
 				FBF964E12453566E00E8EE2A /* CameraController.swift in Sources */,
 				FB9F0C0A24C58ED400AA1191 /* MapLine.swift in Sources */,
 				FBF964E52453566E00E8EE2A /* CVPixelBuffer+Helper.swift in Sources */,
-				FB9931D624C213A80020B441 /* AsyncImage.swift in Sources */,
 				FBF964E42453566E00E8EE2A /* ImagePredictor.swift in Sources */,
 				FB6B0AB224CAF39F0026FD13 /* Bundle+Helper.swift in Sources */,
 				FB6B0AC324CF876D0026FD13 /* StoryCard.swift in Sources */,
-				FB9931DC24C2141A0020B441 /* ImageLoader.swift in Sources */,
 				FB9931CB24C1F0BD0020B441 /* ContentView.swift in Sources */,
 				FB9931CD24C1F5520020B441 /* SceneDelegate.swift in Sources */,
 				FB9931C824C1EC5F0020B441 /* ShakeEffect.swift in Sources */,
