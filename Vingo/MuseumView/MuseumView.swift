@@ -56,7 +56,7 @@ struct MuseumView: View {
                     }
                     Spacer()
                     VStack(alignment: .trailing) {
-                        Text("0%")
+                        Text("\(self.app.getMuseumProgress())%")
                                  .font(.custom("Futura", size: 20))
                                  .fontWeight(.bold)
                                  .foregroundColor(Color(#colorLiteral(red: 0.3101347089, green: 0.2808781564, blue: 1, alpha: 1)))
@@ -73,13 +73,13 @@ struct MuseumView: View {
 
                 
                 Text(app.museum.description)
-                    .font(.custom("PT Sans", size: 16))
+                    .font(.custom("PT Sans", size: 18))
                     .foregroundColor(Color(#colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)))
-                    .fontWeight(.bold)
-                    .kerning(-0.75)
+                    .fontWeight(.black)
+                    .kerning(-0.86)
                     .lineSpacing(-5)
                     .padding(.top, 5.0)
-                    .frame(width: UIScreen.main.bounds.width-50, height: 80)
+                    .frame(width: UIScreen.main.bounds.width-50, height: 90)
                 
                 HStack(alignment: .center, spacing: 10) {
                     Button(action: { self.openMapForPlace() }) {
@@ -108,7 +108,7 @@ struct MuseumView: View {
             HStack(alignment: .top) {
                 VStack(alignment: .leading) {
                     Text("Achievements")
-                           .font(.custom("Futura", size: 25))
+                           .font(.custom("Futura", size: 22))
                            .foregroundColor(Color(#colorLiteral(red: 0.3101347089, green: 0.2808781564, blue: 1, alpha: 1)))
                            .fontWeight(.bold)
                            .kerning(-1.55)
@@ -120,7 +120,7 @@ struct MuseumView: View {
                 }
                 Spacer()
                 VStack(alignment: .trailing) {
-                    Text("0%")
+                    Text("\(self.app.getAchivFullProgress())%")
                              .font(.custom("Futura", size: 20))
                              .fontWeight(.bold)
                              .foregroundColor(Color(#colorLiteral(red: 0.3101347089, green: 0.2808781564, blue: 1, alpha: 1)))
@@ -142,9 +142,10 @@ struct MuseumView: View {
             }
             
             if self.app.storyMode {
-                Story(active: self.$app.storyMode, element: self.app.activeAchievement)
+                Story(active: self.$app.storyMode, element: self.app.activeStory).transition(.move(edge: .bottom))
             }
         }
+    
         .navigationBarHidden(true)
         .navigationBarTitle("")
         .navigationBarBackButtonHidden(true)

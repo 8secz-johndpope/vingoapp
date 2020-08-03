@@ -3,9 +3,7 @@ import UIKit
 import SwiftUI
 
 final class CameraViewController: UIViewController {
-    @EnvironmentObject var app: AppStore
-
-    private var predictor = ImagePredictor()
+    public var onFrame: (_ buffer: [Float]) -> Void = {_ in}
     private var cameraController = CameraController()
     private let delayMs: Double = 500
     private var prevTimestampMs: Double = 0.0
@@ -30,13 +28,8 @@ final class CameraViewController: UIViewController {
             // Do predict 2fps
             if (currentTimestamp - strongSelf.prevTimestampMs) * 1000 <= strongSelf.delayMs { return }
             strongSelf.prevTimestampMs = currentTimestamp
-            
-            // Do predict
-            if let results = try? strongSelf.predictor.predict(pixelBuffer, resultCount: 3) {
-                DispatchQueue.main.async {
-                    self?.app.predict = results
-                }
-            }
+                        
+            strongSelf.onFrame(pixelBuffer)
         }
     }
 
@@ -53,13 +46,16 @@ final class CameraViewController: UIViewController {
 }
 
 
-extension CameraViewController: UIViewControllerRepresentable {
+struct CameraView: UIViewControllerRepresentable {
     public typealias UIViewControllerType = CameraViewController
-    
-    public func makeUIViewController(context: UIViewControllerRepresentableContext<CameraViewController>) -> CameraViewController {
-        return CameraViewController()
+    public var onFrame: (_ buffer: [Float]) -> Void
+
+    public func makeUIViewController(context: UIViewControllerRepresentableContext<CameraView>) -> CameraViewController {
+        let controller = CameraViewController()
+        controller.onFrame = self.onFrame
+        return controller
     }
     
-    public func updateUIViewController(_ uiViewController: CameraViewController, context: UIViewControllerRepresentableContext<CameraViewController>) {
+    public func updateUIViewController(_ uiViewController: CameraViewController, context: UIViewControllerRepresentableContext<CameraView>) {
     }
 }

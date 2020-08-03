@@ -45,14 +45,15 @@ struct MainView: View {
                         .animation(.spring())
                     }
                 }
-                .animation(.spring())
                 .background( GeometryReader { proxy in Color.clear.onAppear {
                     self.size = proxy.size
                 }})
                 .offset(x: CGFloat(Int(self.size.width)/2) - UIScreen.main.bounds.width/2 - self.draggedOffset.width)
                 .highPriorityGesture(DragGesture()
                     .onChanged { value in
-                        self.draggedOffset.width = self.width * CGFloat(self.current) - value.translation.width
+                        withAnimation {
+                            self.draggedOffset.width = self.width * CGFloat(self.current) - value.translation.width
+                        }
                     }
                     .onEnded { value in
                         if (value.translation.width < -100 && self.current < self.app.museums.count-1) {
@@ -61,7 +62,9 @@ struct MainView: View {
                         if (value.translation.width > 100 && self.current > 0) {
                             self.current -= 1
                         }
-                        self.draggedOffset.width = self.width * CGFloat(self.current)
+                        withAnimation {
+                            self.draggedOffset.width = self.width * CGFloat(self.current)
+                        }
                     })
             }
         }

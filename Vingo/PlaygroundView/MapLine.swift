@@ -18,13 +18,14 @@ struct MapElementPreferenceKey: PreferenceKey {
 struct QuestBadge: View {
     public let room: Room
     public let active: Int
+    public let competed: Set<Int>
 
     var body: some View {
         Group {
             HStack(alignment: .center) {
                 ForEach(self.room.pictures) { picture in
                     Circle()
-                        .foregroundColor(self.active == picture.id ? Color(#colorLiteral(red: 0.3101347089, green: 0.2808781564, blue: 1, alpha: 1)) : Color.gray)
+                        .foregroundColor(self.active == picture.id || self.competed.contains(picture.id) ? Color(#colorLiteral(red: 0.3101347089, green: 0.2808781564, blue: 1, alpha: 1)) : Color.gray)
                         .frame(width: 10, height: 10)
                         .foregroundColor(.gray)
                         .animation(.spring())
@@ -66,6 +67,7 @@ struct MapLine: View {
 
     public let map: [Room]
     @Binding public var current: Int
+    public let completed: Set<Int>
 
     private func getOffset() -> CGFloat {
         return self.size.width/2 - (self.elements[self.current] ?? 0);
@@ -77,7 +79,7 @@ struct MapLine: View {
                 ForEach(self.map, id: \.id) { room in
                     Group {
                         RoomBadge(room: room, active: room.id == self.current)
-                        QuestBadge(room: room, active: self.current)
+                        QuestBadge(room: room, active: self.current, competed: self.completed)
                     }
                 }
             }

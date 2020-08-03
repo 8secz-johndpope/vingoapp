@@ -1,10 +1,11 @@
 import Foundation
 import Combine
 
+var items = Bundle.main.decode([Picture].self, from: "items.json")
+var rooms = Bundle.main.decode([Room].self, from: "rooms.json")
+var achivki = Bundle.main.decode([Achievement].self, from: "achivki.json")
+
 func getRooms() -> [Room] {
-    var items = Bundle.main.decode([Picture].self, from: "items.json")
-    var rooms = Bundle.main.decode([Room].self, from: "rooms.json")
-    
     items = items.filter { $0.category == "Painting" }
     
     // Generate tree hierarchy for picture in rooms
@@ -27,50 +28,80 @@ func getRooms() -> [Room] {
             ind += 1
         }
     }
-    
+
     return rooms;
 }
 
-var achivki = Bundle.main.decode([Achievement].self, from: "achivki.json")
-
 
 class AppStore: ObservableObject {
+    public var predictor = ImagePredictor()
     @Published var museum: Museum
     @Published var activeRoom: Room?
     @Published var activePicture: Picture?
-    @Published var activeAchievement: Achievement?
+    @Published var activeStory: MuseumElement?
 
     @Published var storyMode = false
     @Published var activeElement: Int = 0
     @Published var map: [MuseumElement] = []
+    
+    @Published var achievements = [0: 10, 5: 10, 10: 10]
+    @Published var completed: Set<Int> = []
+    
+    func getAchivProgress(id: Int) -> Double {
+        Double(self.achievements[id] ?? 0) / Double(self.museum.achievements[id].total)
+    }
+    
+    func getAchivFullProgress() -> Int {
+        let per = self.museum.achievements.map { self.getAchivProgress(id: $0.id) }.reduce(0, +)
+        return Int(per / Double(self.museum.achievements.count) * 100)
+    }
+    
+    func getMuseumProgress() -> Int {
+        return Int(Double(self.completed.count) / Double(items.count) * 100)
+    }
 
     @Published var selectedIndex = 0 {
         didSet {
             if self.selectedIndex < 0 {
                 self.selectedIndex = 0
             }
-            
+           
             if self.selectedIndex >= self.map.count {
                 self.selectedIndex = self.map.count-1
             }
-            
-            self.activeElement = self.map[self.selectedIndex].id
-    
-            // TODO: Fix for prev
-            if let room = self.getRoom(self.activeElement, self.museum.rooms) {
-                self.activeRoom = room
-            }
-            
-            if self.activeRoom != nil {
-                self.activePicture = self.getPicture(self.activeElement, self.activeRoom!)
+        
+            DispatchQueue.main.async {
+                 self.activeElement = self.map[self.selectedIndex].id
+         
+                 // TODO: Fix for prev
+                 if let room = self.getRoom(self.activeElement, self.museum.rooms) {
+                     self.activeRoom = room
+                 }
+                 
+                 if self.activeRoom != nil {
+                     self.activePicture = self.getPicture(self.activeElement, self.activeRoom!)
+                 }
             }
         }
     }
     
     // Do recognize
-    var predict: ([Float], Double) = ([], 0) {
-        didSet {
-            
+    public func predict(_ buffer: [Float] = []) {
+        let id = try? self.predictor.predict(buffer)
+        if id != nil && self.activePicture != nil {
+            DispatchQueue.main.async {
+                let curPicture = id == self.activePicture!.id
+                let curRoom = self.getPicture(id!, self.activeRoom!) != nil
+                let isComplete = self.completed.contains(id!)
+
+                // If we exist in game mode
+                if curPicture && curRoom && !isComplete {
+                    self.storyMode = true
+                    self.activeStory = self.activePicture
+                    self.completed.insert(id!)
+                    self.selectedIndex += 1
+                }
+            }
         }
     }
 
@@ -107,7 +138,7 @@ class AppStore: ObservableObject {
             }
         }
         self.selectedIndex = 0
-        self.activeAchievement = self.museum.achievements[0]
+        self.activeStory = self.museum.achievements[0]
     }
     
     public func getRoom(_ id: Int, _ rooms: [Room]) -> Room? { rooms.first(where: { $0.id == id })}

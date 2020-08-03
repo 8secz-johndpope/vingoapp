@@ -50,10 +50,28 @@ struct SmallCard<Content: View>: View {
 
 struct PictureCard: View {
     var picture: Picture
+    var completed: Bool
      
     var body: some View {
         SmallCard {
-            Text(self.picture.quest).modifier(FitToWidth())
+            if !self.completed {
+                Text(self.picture.quest).modifier(FitToWidth())
+            } else {
+                VStack(alignment: .leading) {
+                    Text(self.picture.title)
+                        .font(.custom("Futura", size: 20))
+                        .fontWeight(.bold)
+                        .foregroundColor(Color(#colorLiteral(red: 0.3101347089, green: 0.2808781564, blue: 1, alpha: 1)))
+                        .kerning(-1.5)
+                    Text(self.picture.description ?? "")
+                        .font(.custom("PT Sans", size: 14))
+                        .foregroundColor(Color(#colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)))
+                        .fontWeight(.bold)
+                        .kerning(-0.75)
+                        .lineSpacing(-5)
+                        .padding(.top, 5.0)
+                }
+            }
         }
     }
 }
