@@ -20,11 +20,19 @@ func getRooms() -> [Room] {
     rooms = rooms.sorted(by: { $0.id < $1.id }).filter({ $0.pictures.count > 1})
     
     var ind = 0
+    let emoji = ["🐶", "😸", "👧", "🍏", "🔥", "👻", "🤡"];
+    
     rooms.forEach { room in
         room.index = ind
         ind += 1
         room.pictures.forEach { picture in
+            var quest = "";
+            for _ in 0..<Int.random(in: 4...12) {
+                quest += emoji.randomElement() ?? ""
+            }
+            
             picture.index = ind
+            picture.quest = quest
             ind += 1
         }
     }

@@ -12,11 +12,11 @@
 		A07753CF2343DDEF00186969 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A07753CE2343DDEF00186969 /* Assets.xcassets */; };
 		A07753D22343DDEF00186969 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A07753D02343DDEF00186969 /* LaunchScreen.storyboard */; };
 		A07753DD2343F15B00186969 /* TorchModule.mm in Sources */ = {isa = PBXBuildFile; fileRef = A07753DB2343F15B00186969 /* TorchModule.mm */; };
+		FB3AD2DC24E8137B0057747A /* PlaygroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3AD2DB24E8137B0057747A /* PlaygroundView.swift */; };
 		FB3EBCBE24522FCA00C4E33A /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A07753D32343DDEF00186969 /* Info.plist */; };
 		FB6B0AAE24CAF0670026FD13 /* items.json in Resources */ = {isa = PBXBuildFile; fileRef = FB6B0AAD24CAF0670026FD13 /* items.json */; };
 		FB6B0AB024CAF06C0026FD13 /* rooms.json in Resources */ = {isa = PBXBuildFile; fileRef = FB6B0AAF24CAF06C0026FD13 /* rooms.json */; };
 		FB6B0AB224CAF39F0026FD13 /* Bundle+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6B0AB124CAF39F0026FD13 /* Bundle+Helper.swift */; };
-		FB6B0ABA24CB39D10026FD13 /* PlaygroundView..swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6B0AB924CB39D10026FD13 /* PlaygroundView..swift */; };
 		FB6B0ABC24CBB56E0026FD13 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6B0ABB24CBB56E0026FD13 /* Models.swift */; };
 		FB6B0AC124CF15960026FD13 /* BackgroundParalax.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6B0AC024CF15960026FD13 /* BackgroundParalax.swift */; };
 		FB6B0AC324CF876D0026FD13 /* StoryCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6B0AC224CF876D0026FD13 /* StoryCard.swift */; };
@@ -61,10 +61,10 @@
 		A07753DA2343F15B00186969 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		A07753DB2343F15B00186969 /* TorchModule.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TorchModule.mm; sourceTree = "<group>"; };
 		A07753DC2343F15B00186969 /* TorchModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TorchModule.h; sourceTree = "<group>"; };
+		FB3AD2DB24E8137B0057747A /* PlaygroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaygroundView.swift; sourceTree = "<group>"; };
 		FB6B0AAD24CAF0670026FD13 /* items.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = items.json; path = "../../../../scrape-hermitage/static/hermitage_staff/items.json"; sourceTree = "<group>"; };
 		FB6B0AAF24CAF06C0026FD13 /* rooms.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = rooms.json; path = "../../../../scrape-hermitage/static/hermitage_staff/rooms.json"; sourceTree = "<group>"; };
 		FB6B0AB124CAF39F0026FD13 /* Bundle+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Helper.swift"; sourceTree = "<group>"; };
-		FB6B0AB924CB39D10026FD13 /* PlaygroundView..swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlaygroundView..swift; path = ../../../../.Trash/PlaygroundView..swift; sourceTree = "<group>"; };
 		FB6B0ABB24CBB56E0026FD13 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		FB6B0AC024CF15960026FD13 /* BackgroundParalax.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundParalax.swift; sourceTree = "<group>"; };
 		FB6B0AC224CF876D0026FD13 /* StoryCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryCard.swift; sourceTree = "<group>"; };
@@ -218,8 +218,8 @@
 			children = (
 				FB9931C424C1EC150020B441 /* SmallCard.swift */,
 				FB9F0C0924C58ED400AA1191 /* MapLine.swift */,
+				FB3AD2DB24E8137B0057747A /* PlaygroundView.swift */,
 				FBBFD3CC24C88F8000542654 /* SwipeableCards.swift */,
-				FB6B0AB924CB39D10026FD13 /* PlaygroundView..swift */,
 				FB6B0AC224CF876D0026FD13 /* StoryCard.swift */,
 			);
 			path = PlaygroundView;
@@ -368,12 +368,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB9F0C0424C3919900AA1191 /* MuseumView.swift in Sources */,
-				FB6B0ABA24CB39D10026FD13 /* PlaygroundView..swift in Sources */,
 				FB6B0ACC24D1F2630026FD13 /* LottieView.swift in Sources */,
 				FB6EF24624D6D7A10028A17E /* SlideAnimatedTransitioning.swift in Sources */,
 				FB9931D324C211D10020B441 /* MainView.swift in Sources */,
 				FB6EF23F24D4451A0028A17E /* AchievementView.swift in Sources */,
 				FB6B0ABC24CBB56E0026FD13 /* Models.swift in Sources */,
+				FB3AD2DC24E8137B0057747A /* PlaygroundView.swift in Sources */,
 				FBBFD3CD24C88F8000542654 /* SwipeableCards.swift in Sources */,
 				A07753DD2343F15B00186969 /* TorchModule.mm in Sources */,
 				A07753C62343DDEE00186969 /* AppDelegate.swift in Sources */,

@@ -103,8 +103,8 @@ struct MapLine: View {
                     self.toggleAnim.toggle()
                 }
             }
+            .animation(self.toggleAnim ? .easeOut : .none)
             .offset(x: self.getOffset())
-            .animation(self.toggleAnim ? .spring() : .none)
         }
     }
 }

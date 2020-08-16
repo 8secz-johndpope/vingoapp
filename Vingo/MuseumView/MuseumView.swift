@@ -140,10 +140,6 @@ struct MuseumView: View {
                 .offset(y: -20)
                 .environmentObject(self.app)
             }
-            
-            if self.app.storyMode {
-                Story(active: self.$app.storyMode, element: self.app.activeStory).transition(.move(edge: .bottom))
-            }
         }
     
         .navigationBarHidden(true)

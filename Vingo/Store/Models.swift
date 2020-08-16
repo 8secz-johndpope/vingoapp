@@ -49,7 +49,7 @@ class Picture: MuseumElement, Codable, Identifiable {
     let created: String?
     let room: Int?
     let image: String?
-    let quest = "🐶🐶🐶🐶🐶🐶🐶"
+    var quest = ""
     var index = 0
 
     enum CodingKeys: String, CodingKey {

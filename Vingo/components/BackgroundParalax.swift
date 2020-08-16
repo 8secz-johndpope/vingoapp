@@ -22,7 +22,9 @@ struct BackgroundParalax: View {
                     }
                 }
             }
-        }.rotationEffect(.degrees(-20))
+        }
+        .rotationEffect(.degrees(-20))
+        .background(Color.white)
     }
 }
 

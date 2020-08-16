@@ -11,9 +11,19 @@ struct ContentView: View {
     @EnvironmentObject var app: AppStore
 
     var body: some View {
-        NavigationView {
-            MainView().environmentObject(self.app).background(BackgroundParalax())
-        }.edgesIgnoringSafeArea(.top)
+        ZStack {
+            NavigationView {
+                MainView().environmentObject(self.app).background(BackgroundParalax())
+            }.zIndex(1)
+
+            VStack {
+                if self.app.storyMode {
+                    Story()
+                        .environmentObject(self.app)
+                        .transition(AnyTransition.move(edge: .bottom))
+                }
+            }.zIndex(2)
+        }
     }
 }
 
