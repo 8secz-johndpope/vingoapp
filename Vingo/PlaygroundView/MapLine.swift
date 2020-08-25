@@ -43,16 +43,16 @@ struct RoomBadge: View {
     public let active: Bool
 
     var body: some View {
-        Text(String(self.room.id))
+        Text("👨‍🦰👂")
             .font(.custom("Futura", size: 14))
             .fontWeight(.bold)
             .foregroundColor(Color(#colorLiteral(red: 0.3101347089, green: 0.2808781564, blue: 1, alpha: 1)))
-            .padding(.horizontal, 15)
+            .padding(.horizontal, 8)
             .padding(.vertical, 5)
             .foregroundColor(.white)
-            .frame(width: 60)
+            .frame(width: 65)
             .background(RoundedRectangle(cornerRadius: 50)
-                .overlay(RoundedRectangle(cornerRadius: 50).stroke(self.active  ? Color(#colorLiteral(red: 0.3101347089, green: 0.2808781564, blue: 1, alpha: 1)) : Color.clear, style: StrokeStyle(lineWidth: 4)))
+                .overlay(RoundedRectangle(cornerRadius: 50).stroke(self.active  ? Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)) : Color.clear, style: StrokeStyle(lineWidth: 4)))
                 .foregroundColor(.white)
                 .animation(.spring()))
             .anchorPreference(key: MapElementPreferenceKey.self, value: .bounds, transform: { [MapElementPreferenceData(id: self.room.id, bounds: $0)] })
@@ -75,7 +75,7 @@ struct MapLine: View {
     
     var body: some View {
         HStack {
-            HStack(alignment: .bottom) {
+            HStack(alignment: .center) {
                 ForEach(self.map, id: \.id) { room in
                     Group {
                         RoomBadge(room: room, active: room.id == self.current)

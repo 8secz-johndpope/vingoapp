@@ -49,13 +49,14 @@ class Picture: MuseumElement, Codable, Identifiable {
     let created: String?
     let room: Int?
     let image: String?
-    var quest = ""
+    let quest: String
     var index = 0
 
     enum CodingKeys: String, CodingKey {
         case id
         case title
         case type
+        case quest
         case created
         case description
         case original_image

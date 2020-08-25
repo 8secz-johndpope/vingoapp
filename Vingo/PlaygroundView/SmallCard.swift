@@ -55,7 +55,7 @@ struct PictureCard: View {
     var body: some View {
         SmallCard {
             if !self.completed {
-                Text(self.picture.quest).modifier(FitToWidth())
+                Text(self.picture.quest).font(.custom("Arial", size: 40))
             } else {
                 VStack(alignment: .leading) {
                     Text(self.picture.title)

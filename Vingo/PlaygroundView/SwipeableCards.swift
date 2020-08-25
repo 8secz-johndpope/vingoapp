@@ -28,7 +28,7 @@ struct SwipeableCards: View {
 
     var body: some View {
         ZStack(alignment: .bottom) {
-            ForEach(self.app.map[max(0, self.app.selectedIndex-2)..<self.app.selectedIndex+3], id: \.id) { element in
+            ForEach(self.app.map[max(0, self.app.selectedIndex-2)..<min(self.app.selectedIndex+3, self.app.map.count)], id: \.id) { element in
                 self.makeView(element).offset(x: CGFloat(element.index)*UIScreen.main.bounds.width)
             }
         }
