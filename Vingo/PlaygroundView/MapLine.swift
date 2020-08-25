@@ -43,7 +43,7 @@ struct RoomBadge: View {
     public let active: Bool
 
     var body: some View {
-        Text("👨‍🦰👂")
+        Text(String(self.room.id))
             .font(.custom("Futura", size: 14))
             .fontWeight(.bold)
             .foregroundColor(Color(#colorLiteral(red: 0.3101347089, green: 0.2808781564, blue: 1, alpha: 1)))
